@@ -2,9 +2,7 @@ import { Bell, ChevronDown, Menu, Search } from 'lucide-react'
 
 function Header({ activeTab, setSidebarOpen,sidebar }) {
   return (
-    <div className={`bg-white/10 backdrop-blur-2xl border-b border-white/20 px-8 py-5 
-      
-    `}>
+    <div className='bg-white/10 backdrop-blur-2xl border-b border-white/20 px-8 py-5 rounded-b-xl '>
       <div className='flex items-center justify-between'>
         <div className='flex items-center space-x-6'>
           <button className={`lg:hidden text-white/70 hover:text-white p-2 rounded-xl

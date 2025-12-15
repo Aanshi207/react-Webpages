@@ -2,10 +2,13 @@ import {
 BarChart3,
 Cpu,
 Globe,
+HelpCircle,
 Home,
 Package,
 Search,
+FileText,
 Settings,
+ShieldCheck,
 ShoppingBag,
 Target,
 Users,
@@ -41,6 +44,28 @@ export const menuItems =[
         label: "Setting",
         id: "setting",
         gradient: "from-gray-500 to-gray-800 "
+    }
+
+]
+
+export const legalItems = [
+    {
+        icon: ShieldCheck,
+        label: "Privacy Policy",
+        id: "privacy policy",
+        gradient: "from-blue-500 to-cyan-500"
+    },
+    {
+        icon: FileText,
+        label: "Terms of Service",
+        id: "terms-of-service",
+        gradient: "from-blue-500 to-cyan-500"
+    },
+    {
+        icon: HelpCircle,
+        label: "FAQ",
+        id: "faq",
+        gradient: "from-blue-500 to-cyan-500"
     }
 
 ]
