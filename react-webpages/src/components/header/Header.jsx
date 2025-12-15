@@ -9,7 +9,6 @@ function Header({ activeTab, setSidebarOpen,sidebar }) {
         <div className='flex items-center space-x-6'>
           <button className={`lg:hidden text-white/70 hover:text-white p-2 rounded-xl
           hover:bg-white/10 
-          ${sidebar ? "hidden" : ""}
           `}
           onClick={() => setSidebarOpen(true)}
           
@@ -26,9 +25,9 @@ function Header({ activeTab, setSidebarOpen,sidebar }) {
       
         <div className='flex items-center space-x-4'>
           <div className='hidden md:flex items-center bg-white/10 backdrop-blur-xl
-          border border-white/20 rounded-2xl px-6 py-3 w-96 group hover:bg-white/20
+          border border-white/20 rounded-2xl px-6 py-3 w-80 group hover:bg-white/20
           transition-all duration-300'>
-            <Search className='h-5 w-5 text-white/50 mr-3 group-hover:text-white/90 transition-all'/>
+            <Search className=' text-white/50 mr-3 group-hover:text-white/90 transition-all'/>
             <input 
               type='text'
               className='bg-transparent text-white placeholder-white/50 focus:outline-none flex-1'

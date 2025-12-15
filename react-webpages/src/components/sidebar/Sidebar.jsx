@@ -5,7 +5,7 @@ import { menuItems } from '../../data/Data'
 function Sidebar({ sidebar, setSidebarOpen, activeTab, setActiveTab }) {
   return (
     <>
-        <div className={`${sidebar ? "translate-x-0" : "-translate-x-full"} fixed backdrop-blur-md inset-y-0 left-0 z-50 w-80 bg-white/10 
+        <div className={`${sidebar ? "translate-x-0 " : "-translate-x-full"} fixed backdrop-blur-md inset-y-0 left-0 z-50 w-80 bg-white/10 
             border-r border-white/20  duration-500 ease-out lg:translate-x-0 
             lg:static lg:inset-0 `}>
                 <div className='flex items-center justify-between h-24 px-8 border-b border-white/20'>

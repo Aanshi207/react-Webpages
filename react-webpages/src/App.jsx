@@ -14,7 +14,7 @@ function App() {
     <>
       <div className='flex min-h-screen bg-linear-to-br from-indigo-900 via-purple-900
       to-pink-900 relative overflow-hidden'>
-        <div className='flex   min-h-screen relative z-10'>
+        <div className='flex  min-h-screen relative z-10'>
           <Sidebar
            sidebar={sidebar}
            setSidebarOpen = {setSidebarOpen}
@@ -29,6 +29,7 @@ function App() {
             setSidebarOpen={setSidebarOpen}
           />
         </div>
+
       </div>
     </>
   )
