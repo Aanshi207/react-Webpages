@@ -50,7 +50,7 @@ function Header({ activeTab, setSidebarOpen,sidebar }) {
                 <p>System Administrator</p>
               </div>
               {/* <div className='relative'>
-                <div className='h-12 w-12 bg-linear-to-r from-cyan-400 to-blue-500 rounded-2xl
+                <div className='h-9 w-9 bg-linear-to-r from-cyan-400 to-blue-500 rounded-2xl
                 flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300'>
                   <span className='text-white font-bold'>AM</span>
                 </div>
