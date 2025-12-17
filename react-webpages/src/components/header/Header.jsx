@@ -28,7 +28,7 @@ function Header({ setSidebarOpen }) {
 
           <h2
             className="text-xl sm:text-2xl lg:text-3xl font-bold
-            bg-gradient-to-r from-white to-white/70
+            bg-linear-to-r from-white to-white/70
             bg-clip-text text-transparent capitalize"
           >
             {pageTitle}
@@ -61,7 +61,7 @@ function Header({ setSidebarOpen }) {
             <Bell className="h-5 w-5 sm:h-6 sm:w-6" />
             <span
               className="absolute -top-1 -right-1 h-4 w-4 sm:h-5 sm:w-5
-              bg-gradient-to-r from-pink-500 to-red-500 rounded-full
+              bg-linear-to-r from-pink-500 to-red-500 rounded-full
               text-[10px] sm:text-xs text-white
               flex items-center justify-center"
             >
@@ -77,7 +77,7 @@ function Header({ setSidebarOpen }) {
           >
             
             <div
-              className="h-8 w-8 bg-gradient-to-r from-cyan-400 to-blue-500
+              className="h-8 w-8 bg-linear-to-r from-cyan-400 to-blue-500
               rounded-xl flex items-center justify-center text-white font-bold"
             >
               AP

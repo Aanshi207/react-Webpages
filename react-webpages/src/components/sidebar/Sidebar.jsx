@@ -23,7 +23,7 @@ function Sidebar({ sidebar, setSidebarOpen }) {
         
         <div className="flex items-center justify-between h-24 px-6 border-b border-white/20">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl
+            <div className="w-12 h-12 bg-linear-to-r from-cyan-400 to-blue-500 rounded-2xl
               flex items-center justify-center shadow-2xl">
               <Sparkles className="h-7 w-7 text-white" />
             </div>
@@ -63,12 +63,12 @@ function Sidebar({ sidebar, setSidebarOpen }) {
                 <>
                   {isActive && (
                     <div
-                      className={`absolute inset-0 bg-gradient-to-r opacity-30 ${item.gradient}`}
+                      className={`absolute inset-0 bg-linear-to-r opacity-30 ${item.gradient}`}
                     />
                   )}
 
                   <div
-                    className={`p-2 rounded-xl bg-gradient-to-r mr-4 relative z-10 ${item.gradient}`}
+                    className={`p-2 rounded-xl bg-linear-to-r mr-4 relative z-10 ${item.gradient}`}
                   >
                     <item.icon className="h-5 w-5 text-white" />
                   </div>

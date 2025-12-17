@@ -18,7 +18,7 @@ function Footer() {
         {/* LOGO & ABOUT */}
         <div className="space-y-4">
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl
+            <div className="w-10 h-10 bg-linear-to-r from-cyan-400 to-blue-500 rounded-2xl
               flex items-center justify-center shadow-xl">
               <Sparkles className="h-6 w-6 text-white" />
             </div>
@@ -102,7 +102,7 @@ export default Footer
 function SocialIcon({ children, gradient }) {
   return (
     <div
-      className={`w-9 h-9 bg-gradient-to-r ${gradient} rounded-xl
+      className={`w-9 h-9 bg-linear-to-r ${gradient} rounded-xl
       flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition`}
     >
       {children}
