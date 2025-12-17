@@ -1,106 +1,111 @@
-import {  ArrowBigUpIcon, ChevronsUp, Facebook, Instagram, Linkedin, Sparkle, TwitterIcon } from 'lucide-react'
-import React from 'react'
-import { menuItems,legalItems } from '../../data/Data'
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Sparkles,
+  TwitterIcon,
+  ChevronsUp,
+} from "lucide-react"
+import { menuItems, legalItems } from "../../data/Data"
 
-function Footer({ activeTab, setActiveTab }) {
+function Footer() {
   return (
-    <div className='flex space-x-130 bg-white/10 backdrop-blur-2xl border-t border-white/20 px-8 py-15 rounded-t-xl  '>
-      <div className='items-center justify-between'>
+    <footer className="bg-white/10 backdrop-blur-2xl border-t border-white/20 px-6 py-10 ">
+      
+      {/* MAIN GRID */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1  sm:grid-cols-4  lg:grid-cols-4 gap-50 ">
+
+        {/* LOGO & ABOUT */}
+        <div className="space-y-4">
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-2xl
+              flex items-center justify-center shadow-xl">
+              <Sparkles className="h-6 w-6 text-white" />
+            </div>
+            <div>
+              <h1 className="text-xl font-bold text-white">ReactPages</h1>
+              <p className="text-xs text-white/60">PREMIUM SUITE</p>
+            </div>
+          </div>
+
+          <p className="text-sm text-white/60 leading-relaxed">
+            This is a React footer built for practice with Tailwind CSS and
+            Lucide icons.
+          </p>
+
+          {/* SOCIAL ICONS */}
+          <div className="flex space-x-3 pt-2">
+            <SocialIcon gradient="from-purple-500 to-pink-500">
+              <Instagram />
+            </SocialIcon>
+            <SocialIcon gradient="from-blue-500 to-cyan-500">
+              <Linkedin />
+            </SocialIcon>
+            <SocialIcon gradient="from-white to-white">
+              <TwitterIcon className="text-blue-500" />
+            </SocialIcon>
+            <SocialIcon gradient="from-blue-600 to-blue-800">
+              <Facebook />
+            </SocialIcon>
+          </div>
+        </div>
+
+        {/* SITE PAGES */}
+        <div>
+          <h3 className="text-lg font-bold text-white mb-4">Site Pages</h3>
+          <ul className="space-y-2">
+            {menuItems.map((item) => (
+              <li key={item.id}>
+                <button className="text-white/70 hover:text-white hover:underline transition">
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+
         
-        {/* LOGO IN FOOTER */}
-        <div className='flex items-center space-x-4'>
-          <div className='relative'>
-            <div className=' w-10 h-10 bg-linear-to-r from-cyan-400 to-blue-500 rounded-2xl
-              flex items-center justify-center shadow-2xl'>
-              <Sparkle className='h-7 w-7 text-white hover:cursor-pointer' />
-            </div>
-          </div>
-
-          <div>
-            <h1 className='text-2xl font-bold bg-linear-to-r from-white to-white/80
-              bg-clip-text text-transparent'>
-              ReactPages
-            </h1>
-            <p className='text-xs text-white/60 font-medium'>PREMIUM SUITE</p>
-          </div>
-          
+        <div>
+          <h3 className="text-lg font-bold text-white mb-4">Legal</h3>
+          <ul className="space-y-2">
+            {legalItems.map((item, index) => (
+              <li key={index}>
+                <button className="text-white/70 hover:text-white hover:underline transition">
+                  {item.label}
+                </button>
+              </li>
+            ))}
+          </ul>
         </div>
 
-        {/* CONTENT AND ACCOUNT */}
-        <div className='w-60 mt-10 items-center '>
-          <div>
-            <p className='text-xs text-white/60 font-medium'>This is React footer for prectice with tailwindcss. React components for Lucide icons that integrate seamlessly into your React applications.   </p>
-          </div>
-
-          <div className='mt-10 flex space-x-3 '>
-            <div className='  w-8 h-8 bg-linear-to-r from-purple-500 to-pink-500 rounded-2xl
-                flex items-center justify-center shadow-2xl'>
-                <Instagram className='h-5 w-5 text-white hover:cursor-pointer' />
-            </div>
-            <div className='  w-8 h-8 bg-linear-to-r from-blue-500 to-cyan-500 rounded-2xl
-                flex items-center justify-center shadow-2xl'>
-                <Linkedin className='h-5 w-5 text-white hover:cursor-pointer' />
-            </div>
-            <div className='  w-8 h-8 bg-linear-to-r from-white to-white rounded-2xl
-                flex items-center justify-center shadow-2xl'>
-                <TwitterIcon className='h-5 w-5 text-blue-500 hover:cursor-pointer' />
-            </div>
-            <div className='  w-8 h-8 bg-linear-to-r from-blue-500 to-blue-800 rounded-2xl
-                flex items-center justify-center shadow-2xl'>
-                <Facebook className='h-5 w-5 text-white hover:cursor-pointer' />
-            </div>
-          </div>
-          
-        </div>
-
-        <div className='w-40 mt-10 items-center '>
-          <button className='border p-2 flex space-x-2 font-bold text-white hover:cursor-pointer' >
+        
+        {/* <div className="flex items-start">
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex items-center space-x-2 text-white font-semibold
+            border border-white/20 px-4 py-2 rounded-xl hover:bg-white/10 transition"
+          >
             <ChevronsUp />
-            <p>Bake To Up</p> 
+            <span>Back to top</span>
           </button>
-            
-          
-          
-        </div>
-
+        </div> */}
       </div>
 
-      <div className='flex space-x-20 flex-row '>
-        <div className='w-30  '>
-          <p className='text-xl font-bold bg-linear-to-r from-white to-white/80
-              bg-clip-text text-transparent'>Site Page</p>
-          
-          <div className='flex flex-col items-start text-white/80 mt-10 space-y-3 '>
-            {menuItems.map((items) => {
-              return(
-                <button 
-                onClick={() => {setActiveTab(items.id);
-                  //setSidebarOpen(false);
-                  }}
-                className={`hover:cursor-pointer hover:underline font-semibold relative z-10 ${activeTab === items.id ? " text-white shadow-2xl scale-105" : 
-                                    "text-white/70 hover:text-white hover:bg-white/10 hover:scale-105"}`}
-                
-                >{items.label}</button>
-              )
-            })}
-          </div>
-        </div>
-
-        <div className=''>
-          <p className='text-xl font-bold bg-linear-to-r from-white to-white/80
-              bg-clip-text text-transparent'>Legal</p>
-          
-          <div className='flex flex-col items-start text-white/80 mt-10 space-y-3 '>
-            {legalItems.map((items) => {
-              return(
-                <button className='hover:cursor-pointer hover:underline font-semibold relative z-10'>{items.label}</button>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-    </div>
+      
+    </footer>
   )
 }
 
 export default Footer
+
+
+function SocialIcon({ children, gradient }) {
+  return (
+    <div
+      className={`w-9 h-9 bg-gradient-to-r ${gradient} rounded-xl
+      flex items-center justify-center shadow-lg cursor-pointer hover:scale-110 transition`}
+    >
+      {children}
+    </div>
+  )
+}

@@ -19,31 +19,36 @@ export const menuItems =[
         icon: Home,
         label: "Overview",
         id: "overview",
-        gradient: "from-purple-500 to-pink-500"
+        gradient: "from-purple-500 to-pink-500",
+        path:'/overview'
     },
     {
         icon: BarChart3,
         label: "Analytics",
         id: "analytics",
-        gradient: "from-blue-500 to-cyan-500"
+        gradient: "from-blue-500 to-cyan-500",
+        path:'/analytics'
     },
     {
         icon: Users,
         label: "Customers",
         id: "customers",
-        gradient: "from-green-500 to-teal-500"
+        gradient: "from-green-500 to-teal-500",
+        path:'/customers'
     },
     {
         icon: ShoppingBag,
         label: "Sales",
         id: "sales",
-        gradient: "from-orange-500 to-yellow-500"
+        gradient: "from-orange-500 to-yellow-500",
+        path:'/sales'
     },
     {
         icon: Settings,
         label: "Setting",
         id: "setting",
-        gradient: "from-gray-500 to-gray-800 "
+        gradient: "from-gray-500 to-gray-800 ",
+        path:'/setting'
     }
 
 ]
@@ -55,7 +60,7 @@ export const legalItems = [
         id: "privacy policy",
         gradient: "from-blue-500 to-cyan-500"
     },
-    {
+    {   
         icon: FileText,
         label: "Terms of Service",
         id: "terms-of-service",

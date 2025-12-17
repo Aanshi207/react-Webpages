@@ -1,51 +1,32 @@
-import { Outlet } from 'react-router-dom'
-import './App.css'
-import Footer from './components/footer/Footer'
-import Header from './components/header/Header'
-import Sidebar from './components/sidebar/Sidebar'
-import { act, useEffect, useState } from 'react'
+import { Outlet } from "react-router-dom"
+import Sidebar from "./components/sidebar/Sidebar"
+import Header from "./components/header/Header"
+import Footer from "./components/footer/Footer"
+import { useState } from "react"
 
 function App() {
-  
-  const [sidebar, setSidebarOpen] = useState(true);
-  const [activeTab, setActiveTab] = useState("overview");
+  const [sidebarOpen, setSidebarOpen] = useState(false)
 
   return (
-    <>
-      <div className='flex min-h-screen bg-linear-to-br from-indigo-900 via-purple-900
-      to-pink-900 relative overflow-hidden'>
-        {/* SIDEBAR */}
-        <div className='flex  min-h-screen relative z-10'>
-          <Sidebar
-           sidebar={sidebar}
-           setSidebarOpen = {setSidebarOpen}
-           activeTab={activeTab}
-           setActiveTab={setActiveTab} />
-        </div>
-
-      {/* HEADER */}
-        <div className='w-full'>
-          <div className='w-full overflow-hidden'>
-            <Header
-              sidebar={sidebar}
-              activeTab={activeTab}
-              setSidebarOpen={setSidebarOpen}
-            />
-          </div>
-        
-        {/* FOOTER */}
-          <div className='w-full mt-10 overflow-hidden'>
-            <Footer 
-              activeTab={activeTab}
-              setActiveTab={setActiveTab}
-            />
-          </div>
-        </div>
-
-      </div>
-
+    <div className="flex min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900">
       
-    </>
+      {/* Sidebar */}
+      <Sidebar
+        sidebar={sidebarOpen}
+        setSidebarOpen={setSidebarOpen}
+      />
+
+      {/* Main Content */}
+      <div className="flex flex-col flex-1">
+        <Header setSidebarOpen={setSidebarOpen} />
+
+        <main className="flex-1 p-4 sm:p-6 lg:p-8">
+          <Outlet />
+        </main>
+
+        <Footer />
+      </div>
+    </div>
   )
 }
 

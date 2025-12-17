@@ -1,69 +1,102 @@
-import { Bell, ChevronDown, Menu, Search } from 'lucide-react'
+import { Bell, Menu, Search } from "lucide-react"
+import { useLocation } from "react-router-dom"
 
-function Header({ activeTab, setSidebarOpen,sidebar }) {
+function Header({ setSidebarOpen }) {
+  const location = useLocation()
+
+  const pageTitle =
+    location.pathname === "/"
+      ? "Overview"
+      : location.pathname.replace("/", "").replace("-", " ")
+
   return (
-    <div className='bg-white/10 backdrop-blur-2xl border-b border-white/20 px-8 py-5 rounded-b-xl '>
-      <div className='flex items-center justify-between'>
-        <div className='flex items-center space-x-6'>
-          <button className={`lg:hidden text-white/70 hover:text-white p-2 rounded-xl
-          hover:bg-white/10 
-          `}
-          onClick={() => setSidebarOpen(true)}
-          
+    <header
+      className="bg-white/10 backdrop-blur-2xl border-b border-white/20
+      px-4 sm:px-6 lg:px-8 py-5 "
+    >
+      <div className="flex items-center justify-between gap-4">
+        
+        
+        <div className="flex items-center gap-3 sm:gap-6">
+          <button
+            className="lg:hidden text-white/70 hover:text-white p-2
+            rounded-xl hover:bg-white/10"
+            onClick={() => setSidebarOpen(true)}
           >
-            <Menu className='w-6 h-6' />
+            <Menu className="w-6 h-6" />
           </button>
-          <div>
-            <h2 className='text-3xl font-bold bg-linear-to-r from-white to-white/70
-            bg-clip-text text-transparent capitalize'>
-              {activeTab}
-            </h2>
-          </div>
+
+          <h2
+            className="text-xl sm:text-2xl lg:text-3xl font-bold
+            bg-gradient-to-r from-white to-white/70
+            bg-clip-text text-transparent capitalize"
+          >
+            {pageTitle}
+          </h2>
         </div>
-      
-        <div className='flex items-center space-x-4'>
-          <div className='hidden md:flex items-center bg-white/10 backdrop-blur-xl
-          border border-white/20 rounded-2xl px-6 py-3 w-80 group hover:bg-white/20
-          transition-all duration-300'>
-            <Search className=' text-white/50 mr-3 group-hover:text-white/90 transition-all'/>
-            <input 
-              type='text'
-              className='bg-transparent text-white placeholder-white/50 focus:outline-none flex-1'
-              placeholder='Search Anything.....'
+
+        
+        <div className="flex items-center gap-2 sm:gap-4">
+          
+          {/* SEARCH (hidden on small) */}
+          <div
+            className="hidden md:flex items-center bg-white/10 backdrop-blur-xl
+            border border-white/20 rounded-2xl px-4 lg:px-6 py-2 lg:py-3
+            w-64 lg:w-80 hover:bg-white/20 transition-all"
+          >
+            <Search className="text-white/50 mr-3" />
+            <input
+              type="text"
+              className="bg-transparent text-white placeholder-white/50
+              focus:outline-none flex-1 text-sm"
+              placeholder="Search..."
             />
           </div>
-          
-          <div className='flex items-center space-x-2'>
-            <button className='relative p-3 text-white/70 hover:text-white hover:bg-white/10
-            rounded-2xl transition-all hover:cursor-pointer duration-300 group'>
-              <Bell className='h-6 w-6' />
-              <span className='absolute -top-1 -right-1 h-5 w-5 bg-linear-to-r from-pink-500 to-red-500 rounded-full
-              text-xs text-white flex items-center justify-center'>3</span>
-            </button>
 
-            <div className='flex items-center space-x-3 ml-4 bg-white/10 backdrop-blur-xl rounded-2xl
-            px-4 py-2 border-white/20 hover:bg-white/20 transition-all duration-300 cursor-pointer group'>
-              <div className='hidden md:block text-right'>
-                <p className='text-white font-semibold' >Aanshi Patel</p>
-                <p>System Administrator</p>
-              </div>
-              {/* <div className='relative'>
-                <div className='h-9 w-9 bg-linear-to-r from-cyan-400 to-blue-500 rounded-2xl
-                flex items-center justify-center shadow-xl group-hover:scale-110 transition-all duration-300'>
-                  <span className='text-white font-bold'>AM</span>
-                </div>
-                <div className='absolute -bottom-1 -right-1 w-4 h-4 bg-green-400 rounded-full 
-                border-2 border-white animate-pulse'></div>
-                <ChevronDown className='h-4 w-4 text-white/60 group-hover:text-white transition-all' />
-              </div> */}
+          
+          <button
+            className="relative p-2 sm:p-3 text-white/70 hover:text-white
+            hover:bg-white/10 rounded-xl transition-all"
+          >
+            <Bell className="h-5 w-5 sm:h-6 sm:w-6" />
+            <span
+              className="absolute -top-1 -right-1 h-4 w-4 sm:h-5 sm:w-5
+              bg-gradient-to-r from-pink-500 to-red-500 rounded-full
+              text-[10px] sm:text-xs text-white
+              flex items-center justify-center"
+            >
+              3
+            </span>
+          </button>
+
+          
+          <div
+            className="flex items-center gap-2 bg-white/10 backdrop-blur-xl
+            rounded-xl px-3 sm:px-4 py-2 border border-white/20
+            hover:bg-white/20 transition cursor-pointer"
+          >
+            
+            <div
+              className="h-8 w-8 bg-gradient-to-r from-cyan-400 to-blue-500
+              rounded-xl flex items-center justify-center text-white font-bold"
+            >
+              AP
             </div>
 
+            
+            <div className="hidden sm:block text-right">
+              <p className="text-white font-semibold text-sm">
+                Aanshi Patel
+              </p>
+              <p className="text-white/60 text-xs">
+                System Admin
+              </p>
+            </div>
           </div>
+
         </div>
       </div>
-    </div>
-
-  
+    </header>
   )
 }
 
