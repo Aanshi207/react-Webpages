@@ -60,12 +60,6 @@ export const legalItems = [
         id: "privacy policy",
         gradient: "from-blue-500 to-cyan-500"
     },
-    {   
-        icon: FileText,
-        label: "Terms of Service",
-        id: "terms-of-service",
-        gradient: "from-blue-500 to-cyan-500"
-    },
     {
         icon: HelpCircle,
         label: "FAQ",

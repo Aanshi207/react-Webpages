@@ -10,13 +10,13 @@ import { menuItems, legalItems } from "../../data/Data"
 
 function Footer() {
   return (
-    <footer className="bg-white/10 backdrop-blur-2xl border-t border-white/20 px-6 py-10 ">
+    <footer className="bg-white/10 backdrop-blur-2xl border-t border-white/20 px-6 py-3 ">
       
       {/* MAIN GRID */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1  sm:grid-cols-4  lg:grid-cols-4 gap-50 ">
+      <div className="max-w-7xl gap-20  mx-auto grid grid-cols-3 lg:gap-100 ">
 
         {/* LOGO & ABOUT */}
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-linear-to-r from-cyan-400 to-blue-500 rounded-2xl
               flex items-center justify-center shadow-xl">
